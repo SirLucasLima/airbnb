@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import Banner from "../components/Banner"
 import SmallCard from "../components/SmallCard"
 import MediumCard from "../components/MediumCard"
+import LargeCard from "../components/LargeCard"
 
 import ExploreData from "../data/ExploreData.json"
 import CardsData from "../data/CardsData.json"
@@ -47,6 +48,13 @@ const Home: NextPage = () => {
             ))}
           </div>
         </section>
+
+        <LargeCard 
+          img="https://links.papareact.com/4cj"
+          title="The Greatest Outdoors"
+          description="Wishlist curated by Airbnb."
+          buttonText="Get Inspired"
+        />
       </main>
     </div>
   )
