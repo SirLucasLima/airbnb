@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Banner from "../components/Banner"
 import SmallCard from "../components/SmallCard"
 import MediumCard from "../components/MediumCard"
@@ -55,6 +56,8 @@ const Home: NextPage = () => {
           description="Wishlist curated by Airbnb."
           buttonText="Get Inspired"
         />
+
+        <Footer />
       </main>
     </div>
   )
