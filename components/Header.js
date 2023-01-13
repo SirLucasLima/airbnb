@@ -67,6 +67,7 @@ export default function Header(){
           <UserCircleIcon className='h-6'/>
         </div>
       </div>
+      
       {searchInput && (
         <div className='flex flex-col col-span-3 mx-auto mt-5'>
           <DateRangePicker 
