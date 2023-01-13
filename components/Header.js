@@ -6,8 +6,27 @@ import {
   GlobeAltIcon, 
   UserIcon
 } from '@heroicons/react/solid'
+import { useState } from 'react'
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // main css file
+import { DateRangePicker } from 'react-date-range';
 
 export default function Header(){
+  const [searchInput, SetSearchInput] = useState('');
+  const [startDate, SetStartDate] = useState(new Date ());
+  const [endDate, SetEndDate] = useState(new Date ());
+  
+  const handleSelect = (ranges) => {
+    SetStartDate(ranges.selection.startDate)
+    SetEndDate(ranges.selection.endDate)
+  }
+  
+  const selectionRange = {
+    startDate: startDate,
+    endDate: endDate,
+    key: 'selection'
+  }
+
   return(
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10'>
       {/* Logo */}
@@ -24,6 +43,8 @@ export default function Header(){
       {/* Search */}
       <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
         <input 
+          value={searchInput}
+          onChange={(e) => SetSearchInput(e.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm'
           type="text" 
           placeholder='Start your search'
@@ -40,8 +61,17 @@ export default function Header(){
           <MenuIcon className='h-6'/>
           <UserCircleIcon className='h-6'/>
         </div>
-
       </div>
+      {searchInput && (
+        <div>
+          <DateRangePicker 
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            rangeColors={"#3FD5B61"}
+            onChange={handleSelect}
+          />
+        </div>
+      )}
     </header>
 
   )
