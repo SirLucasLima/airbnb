@@ -15,12 +15,17 @@ export default function Header(){
   const [searchInput, SetSearchInput] = useState('');
   const [startDate, SetStartDate] = useState(new Date ());
   const [endDate, SetEndDate] = useState(new Date ());
+  const [noOfGuests, SetNoOfGuests] = useState(1);
   
   const handleSelect = (ranges) => {
     SetStartDate(ranges.selection.startDate)
     SetEndDate(ranges.selection.endDate)
   }
   
+  const resetInput = () => {
+    SetSearchInput('');
+  }
+
   const selectionRange = {
     startDate: startDate,
     endDate: endDate,
@@ -63,13 +68,36 @@ export default function Header(){
         </div>
       </div>
       {searchInput && (
-        <div>
+        <div className='flex flex-col col-span-3 mx-auto mt-5'>
           <DateRangePicker 
             ranges={[selectionRange]}
             minDate={new Date()}
-            rangeColors={"#3FD5B61"}
+            rangeColors={["rgb(248 113 113)"]}
             onChange={handleSelect}
           />
+          <div className='flex items-center border-b mb-4'>
+            <h2 className='text-2xl flex-grow font-semibold'>Number of Guests</h2>
+            <UserIcon className='h-5'/>
+            <input 
+              value={noOfGuests}
+              onChange={(e) => SetNoOfGuests(e.target.value)}
+              type="number" 
+              min={1}
+              className='w-12 pl-2 text-lg outline-none text-red-400'/>
+          </div>
+          <div className='flex'>
+            <button 
+              onClick={resetInput}
+              className='flex-grow text-gray-500'
+            >
+              Cancel
+            </button>
+            <button 
+              className='flex-grow text-red-400'
+            >
+              Search
+            </button>
+          </div>
         </div>
       )}
     </header>
