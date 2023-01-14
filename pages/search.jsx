@@ -37,6 +37,7 @@ export default function Search() {
               <InfoCard 
                 key={index}
                 img={item.img}
+                title={item.title}
                 location={item.location}
                 description={item.description}
                 star={item.star}
