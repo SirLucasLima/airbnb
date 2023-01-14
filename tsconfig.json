@@ -23,6 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "pages/search.jsx",
   ],
   "exclude": [
     "node_modules"
