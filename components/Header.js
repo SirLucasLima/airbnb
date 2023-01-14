@@ -1,21 +1,24 @@
 import Image from 'next/image'
+import { useState } from 'react'
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // main css file
+import { DateRangePicker } from 'react-date-range';
 import { 
   SearchIcon,
   MenuIcon,
   UserCircleIcon,
   GlobeAltIcon, 
   UserIcon
-} from '@heroicons/react/solid'
-import { useState } from 'react'
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // main css file
-import { DateRangePicker } from 'react-date-range';
+} from '@heroicons/react/solid';
+import { useRouter } from 'next/router';
 
-export default function Header(){
+
+export default function Header({placeholder}){
   const [searchInput, SetSearchInput] = useState('');
   const [startDate, SetStartDate] = useState(new Date ());
   const [endDate, SetEndDate] = useState(new Date ());
   const [noOfGuests, SetNoOfGuests] = useState(1);
+  const router = useRouter();
   
   const handleSelect = (ranges) => {
     SetStartDate(ranges.selection.startDate)
@@ -24,6 +27,19 @@ export default function Header(){
   
   const resetInput = () => {
     SetSearchInput('');
+  
+  }
+
+  const search = () => {
+    router.push({
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        noOfGuests,
+      }
+    })
   }
 
   const selectionRange = {
@@ -35,7 +51,7 @@ export default function Header(){
   return(
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10'>
       {/* Logo */}
-      <div className='relative flex items-center h-10 cursor-pointer'>
+      <div onClick={() => router.push('/')} className='relative flex items-center h-10 cursor-pointer'>
         <Image
           src="https://links.papareact.com/qd3"
           alt='logo airbnb'
@@ -52,7 +68,7 @@ export default function Header(){
           onChange={(e) => SetSearchInput(e.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm'
           type="text" 
-          placeholder='Start your search'
+          placeholder={placeholder || 'Start your search'}
         />
         <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2'/>
       </div>
@@ -95,6 +111,7 @@ export default function Header(){
             </button>
             <button 
               className='flex-grow text-red-400'
+              onClick={search}
             >
               Search
             </button>
