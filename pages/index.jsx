@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -10,7 +9,7 @@ import LargeCard from "../components/LargeCard"
 import ExploreData from "../data/ExploreData.json"
 import CardsData from "../data/CardsData.json"
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <div className="">
       <Head>
@@ -62,5 +61,3 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
-export default Home
