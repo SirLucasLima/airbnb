@@ -1,27 +1,17 @@
-# Next.js + Tailwind CSS Example
+# AirBnb v2.0
+Project from [Sonny Sangha](https://www.youtube.com/channel/UCqeTj_QAnNlmt7FwzNwHZnA) <br>
+This is a practice project for learning `NextJS` and `TailwindCSS` while creating an [AirBnb](https://airbnb.com) clone
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## Steps to run the Project
+Make sure to have NodeJS installed on your system. If not, download and install it from [NodeJS](https://nodejs.org/en/)
+Clone the repo <br>
+`git clone https://github.com/arifonoy05/airbnb-v2.git`<br>
 
-## Deploy your own
+Install the dependencies <br>
+`npm i` <br>
+Run the server <br>
+`npm run dev` <br>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+And you're good to go
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Visit [https://airbnb.arifonoy.com/](https://airbnb.arifonoy.com/) to take a look at the live site

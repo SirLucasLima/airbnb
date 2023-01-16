@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>LimaBNB</title>
+        <title>Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
