@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Map from "../components/Map";
 import SearchData from "../data/SearchData.json"
 import TagsData from "../data/TagsData.json"
 import { format } from "date-fns";
@@ -46,6 +47,10 @@ export default function Search() {
               />
             ))}
           </div>
+        </section>
+
+        <section className="hidden xl:inline-flex xl:min-w-[600]">
+          <Map />
         </section>
       </main>
 

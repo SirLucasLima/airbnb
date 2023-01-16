@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 export default function InfoCard({img, location, title, description, star, price, total}){
   return(
-    <div className='flex py-7 px-5 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t m-5 active:bg-gray-50'>
-      <div className='relative h-24 w-40 md:h-52 md:w-80 flex=shrink-0'>
+    <div className='flex py-7 px-5 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t active:bg-gray-50'>
+      <div className='relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0'>
         <Image 
           src={img} 
           fill
