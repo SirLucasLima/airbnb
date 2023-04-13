@@ -1,4 +1,4 @@
-[
+export const TagsData = [
   {
     "title": "Cancellation Flexibility"
   },

@@ -1,5 +1,5 @@
-import searchResults from "../data/searchResults.json"
-import TagsData from "../data/TagsData.json"
+import {SearchResults} from "../data/SearchResults"
+import {TagsData} from "../data/TagsData"
 import { useRouter } from "next/router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -37,7 +37,7 @@ export default function Search() {
         </div>
 
           <div className="flex flex-col">
-              {searchResults.map(
+              {SearchResults.map(
                   ({ img, description, lat, location, long, price, star, title, total,
                   }) => (
                       <InfoCard
@@ -57,7 +57,7 @@ export default function Search() {
           </div>
         </section>
         <section className="hidden xl:inline-flex xl:min-w-[600px]">
-          <Map searchResults={searchResults} />
+          <Map searchResults={SearchResults} />
         </section>
       </main>
       <Footer />

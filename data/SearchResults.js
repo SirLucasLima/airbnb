@@ -1,4 +1,4 @@
-[
+export const SearchResults = [
   {
     "img":"https://links.papareact.com/xqj",
     "location":"Private room in center of London",

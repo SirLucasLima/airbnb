@@ -1,4 +1,4 @@
-[
+export const ExploreData = [
   {
     "img":"https://links.papareact.com/5j2",
     "location":"London",

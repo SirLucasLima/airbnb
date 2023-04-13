@@ -6,8 +6,8 @@ import SmallCard from "../components/SmallCard"
 import MediumCard from "../components/MediumCard"
 import LargeCard from "../components/LargeCard"
 
-import ExploreData from "../data/ExploreData.json"
-import CardsData from "../data/CardsData.json"
+import {ExploreData} from "../data/ExploreData"
+import {CardsData} from "../data/CardsData"
 
 export default function Home() {
   return (

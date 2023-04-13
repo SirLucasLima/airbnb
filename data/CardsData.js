@@ -1,4 +1,4 @@
-[
+export const CardsData = [
   {
     "img":"https://links.papareact.com/2io",
     "title":"Outdoor getaways"
