@@ -7,7 +7,7 @@ export default function LargeCard({img, title, description, buttonText}){
         <Image 
           src={img}
           fill
-          objectFit='cover'
+          style={{objectFit:"cover"}}
           className='rounded-2xl'
         />
       </div>

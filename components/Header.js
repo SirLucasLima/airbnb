@@ -14,19 +14,19 @@ import { useRouter } from 'next/router';
 
 
 export default function Header({placeholder}){
-  const [searchInput, SetSearchInput] = useState('');
-  const [startDate, SetStartDate] = useState(new Date ());
-  const [endDate, SetEndDate] = useState(new Date ());
+  const [searchInput, setSearchInput] = useState('');
+  const [startDate, setStartDate] = useState(new Date ());
+  const [endDate, setEndDate] = useState(new Date ());
   const [noOfGuests, SetNoOfGuests] = useState(1);
   const router = useRouter();
   
   const handleSelect = (ranges) => {
-    SetStartDate(ranges.selection.startDate)
-    SetEndDate(ranges.selection.endDate)
+    setStartDate(ranges.selection.startDate)
+    setEndDate(ranges.selection.endDate)
   }
   
   const resetInput = () => {
-    SetSearchInput('');
+    setSearchInput('');
   
   }
 
@@ -56,8 +56,7 @@ export default function Header({placeholder}){
           src="https://links.papareact.com/qd3"
           alt='logo airbnb'
           fill
-          objectFit='contain'
-          objectPosition='left'
+          style={{objectFit:"scale-down", objectPosition: "left"}}
         />
       </div>
 
@@ -65,7 +64,7 @@ export default function Header({placeholder}){
       <div className='flex items-center md:border-2 rounded-full py-2 md:shadow-sm'>
         <input 
           value={searchInput}
-          onChange={(e) => SetSearchInput(e.target.value)}
+          onChange={(e) => setSearchInput(e.target.value)}
           className='flex-grow pl-5 bg-transparent outline-none text-sm'
           type="text" 
           placeholder={placeholder || 'Start your search'}

@@ -9,7 +9,7 @@ export default function InfoCard({img, location, title, description, star, price
         <Image 
           src={img} 
           fill
-          objectFit='cover'
+          style={{objectFit:"cover"}}
           className='rounded-2xl'
         />
       </div>
