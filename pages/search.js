@@ -1,4 +1,4 @@
-import {SearchResults} from "../data/SearchResults"
+//import {SearchResults} from "../data/SearchResults"
 import {TagsData} from "../data/TagsData"
 import { useRouter } from "next/router";
 import Footer from "../components/Footer";
@@ -7,9 +7,8 @@ import Map from "../components/Map";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 
-export default function Search() {
+export default function Search({ searchResults }) {
   const router = useRouter();
-
   const { location, startDate, endDate, noOfGuests } = router.query;
 
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
@@ -37,7 +36,7 @@ export default function Search() {
         </div>
 
           <div className="flex flex-col">
-              {SearchResults.map(
+              {searchResults.map(
                   ({ img, description, lat, location, long, price, star, title, total,
                   }) => (
                       <InfoCard
@@ -57,10 +56,22 @@ export default function Search() {
           </div>
         </section>
         <section className="hidden xl:inline-flex xl:min-w-[600px]">
-          <Map searchResults={SearchResults} />
+          <Map searchResults={searchResults} />
         </section>
       </main>
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const searchResults = await fetch("https://api.jsonserve.com/EKOb7-").then(
+    (res) => res.json()
+  );
+
+  return {
+    props: {
+      searchResults,
+    },
+  };
 }
